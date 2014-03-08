@@ -12,19 +12,18 @@
 class SSC32
 {
 public:
-	SSC32();
-	~SSC32();
+	SSC32(void);
+	~SSC32(void);
 
-	void begin(int portNo, int serialNo = 0);
-	void print(char* message);
-	void println(char* message);
+	void begin(int portNo, int serialNo);
+	void sendToServo(void);
 
-	void move(int servoPin, int servoPos, int timeDelay);
+	void move(uint8_t t_servoPin, uint8_t t_servoPos, uint8_t t_timeDelay);
 
 private:
 	char* currentSerial;
-	// uint8_t servoPin;
-	// uint8_t servoPos;
-	// uint8_t timeDelay;
+	uint8_t servoPin;
+	uint8_t servoPos;
+	uint8_t timeDelay;
 	bool hasBeenInit;
 };
